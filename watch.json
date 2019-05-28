@@ -1,0 +1,21 @@
+{
+  "install": {
+    "include": [
+      "^package\\.json$",
+      "^\\.env$"
+    ]
+  },
+"restart": {
+    "exclude": [
+      "^commands/",
+      "^not-ready/",
+	  "^backups/"
+    ],
+    "include": [
+      "\\.js$",
+      "\\.json",
+      "\\.rebuild"
+    ]
+  },
+  "throttle": 100
+}
