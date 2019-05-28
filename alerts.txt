@@ -1,0 +1,1 @@
+SERVER[2] SUCESSO: [S1mple] - Mensagem enviada para [92] canais de texto.exto.

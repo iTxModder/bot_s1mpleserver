@@ -1,0 +1,50 @@
+Para ativar o rebuild, apenas escreva abaixo segundo o template:
+
+------------------------------ TEMPLATE ------------------------------------
+new rebuild: DATA (DD/MM/AAAA) | HORA (HH:MM)
+----------------------------------------------------------------------------
+23/05/2019 17:02
+23/05/2019 17:04
+23/05/2019 17:13
+23/05/2019 17:17
+23/05/2019 17:23
+23/05/2019 17:38
+23/05/2019 17:41
+23/05/2019 18:05
+23/05/2019 18:06
+23/05/2019 18:21
+24/05/2019 09:41
+new rebuild: 24/05/2019 09:43
+new rebuild: 24/05/2019 09:48
+new rebuild: 24/05/2019 09:50
+new rebuild: 24/05/2019 09:58
+new rebuild: 24/05/2019 09:59
+new rebuild: 24/05/2019 10:01
+new rebuild: 24/05/2019 10:05
+new rebuild: 24/05/2019 10:06
+new rebuild: 24/05/2019 10:10
+new rebuild: 24/05/2019 10:57
+new rebuild: 24/05/2019 10:59
+new rebuild: 24/05/2019 11:01
+new rebuild: 24/05/2019 11:03
+new rebuild: 24/05/2019 11:09
+new rebuild: 24/05/2019 11:14
+new rebuild: 24/05/2019 11:52
+new rebuild: 24/05/2019 11:55
+new rebuild: 24/05/2019 12:09
+new rebuild: 24/05/2019 12:12
+new rebuild: 24/05/2019 12:19
+new rebuild: 24/05/2019 12:23
+new rebuild: 24/05/2019 12:24
+new rebuild: 24/05/2019 12:38
+new rebuild: 24/05/2019 12:40
+new rebuild: 24/05/2019 12:41
+new rebuild: 24/05/2019 12:48
+new rebuild: 25/05/2019 14:47
+new rebuild: 25/05/2019 17:16
+new rebuild: 25/05/2019 17:19
+new rebuild: 25/05/2019 17:55
+new rebuild: 26/05/2019 17:50
+new rebuild: 26/05/2019 19:34
+new rebuild: 26/05/2019 20:37
+new rebuild: 28/05/2019 13:36
