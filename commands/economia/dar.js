@@ -9,7 +9,7 @@ exports.run = async(bot, message, args) => {
   const msgaut = message.author.username
 
     //if (message.author.id != ownerID | message.author.id != ownerID2 | message.author.id != ownerID3 | message.author.id != ownerID4 ) return message.channel.send("<:errado:580518832939204628> **|** Apenas o dono do bot pode fazer isso.");
-if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Funcionário")) {
+if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
 
     if (!message.mentions.members.first()) return message.reply("<:errado:580518832939204628> **|** Para quem você quer dar moons? :crystal_ball:?")
     

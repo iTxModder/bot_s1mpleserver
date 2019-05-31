@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fs = require("fs")
 
 module.exports.run = async (bot, message, args) => {
-    if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Moderador Plus")) {
+    if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
 
         var user_collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id);
 

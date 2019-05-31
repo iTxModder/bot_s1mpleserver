@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
     if (!argcustom[0]) return message.channel.send(specifyembed)
 
   
-if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Moderador Plus")) {
+if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
       client.user.setActivity(argcustom)
     console.log(`${client.user.username} Está agora a jogar ${argcustom}.`)
     message.channel.send(setgamembed)
