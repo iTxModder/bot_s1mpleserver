@@ -47,9 +47,22 @@ const loadCommands = module.exports.loadCommands = (dir = "./commands/") => {
 };
 loadCommands(); // loading the commands 
 
+
+const activities_list = [
+    "Estás perdido? s!help", 
+    "Se quiseres música usa o S1mple Music",
+    "coisas pela janela", 
+    "café pela boca abaixo",
+	"o que o DarkenLight Mage me disser pra fazer"
+    ];
+
 bot.on("ready", async () => {
   console.log(`${bot.user.username} está online em ${bot.guilds.size} servers!`);
-  bot.user.setActivity("✅ Online! Usa s!help para ajuda", {type: "STREAMING"});
+  //bot.user.setActivity("Estás perdido? s!help", {type: "STREAMING"});
+  setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        bot.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
+    }, 10000);
 
 });
 

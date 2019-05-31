@@ -31,7 +31,7 @@
 const Discord = require("discord.js");
 
 exports.run = async (bot, message, args, tools, con) => {
-  if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Moderador Plus")) {    
+  if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Moderador Plus") || message.member.roles.some(r => r.name === "Administrador")) {    
   }
   let embedchoice;
   

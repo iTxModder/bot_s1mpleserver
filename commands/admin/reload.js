@@ -1,7 +1,7 @@
 const Botconfig = require("../../botconfig.json");
 const fs = require('fs')
 exports.run = (bot, message, args) => {
-  if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Moderador Plus")) {
+  if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Moderador")) {
                       
 
 const loadCommands = module.exports.loadCommands = (dir = "./commands/") => {
