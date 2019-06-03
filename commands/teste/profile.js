@@ -60,8 +60,8 @@ console.log("3_2")
   ctx.fillRect(0, 0, 800, 200);
   
   //retangulorep
-  ctx.fillStyle = '#ffffff'
-  ctx.fillRect(canvas.width / 1.16, canvas.height / 4.3, 100, 100);
+  ctx.fillStyle = '#0066CC'
+  ctx.fillRect(canvas.width / 1.16, canvas.height / 5.3, 105, 40);
   
 	// Slightly smaller text placed above the member's display name
 	ctx.font = '28px sans-serif';
