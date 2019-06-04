@@ -1,5 +1,6 @@
 dependencies:
   array-sort: 1.0.0
+  array-sort-by: 1.2.1
   canvas: 2.5.0
   cleverbot.io: 1.0.4
   currency-formatter: 1.5.4
@@ -451,6 +452,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /array-sort-by/1.2.1:
+    dependencies:
+      core-js: 2.6.9
+    dev: false
+    optionalDependencies:
+      ajv: 6.10.0
+    resolution:
+      integrity: sha512-n9/QOUEHspBsztm1rzKPQx0+tVIpAJf7QTTciLIArb6P4dvZ8fNlk8fhGGuCHkU1+oZtsnZAuPPYtaFEjEofIw==
   /array-sort/1.0.0:
     dependencies:
       default-compare: 1.0.0
@@ -706,6 +715,11 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-Mt/LaAym54NXnrjEMdo918cT2h70tqb/Yl7T3uPHQHRm5SxVoqlKmerUy4mL11k8saSBDWQ7ULIHxmeFyT3pfg==
+  /core-js/2.6.9:
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
   /core-util-is/1.0.2:
     dev: false
     resolution:
@@ -2421,6 +2435,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   array-sort: ^1.0.0
+  array-sort-by: ^1.2.1
   canvas: ^2.5.0
   cleverbot.io: ^1.0.4
   currency-formatter: ^1.5.4
