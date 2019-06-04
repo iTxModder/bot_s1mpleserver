@@ -22,7 +22,9 @@ for (var i in resp) {
   if (TotalMoons > 1000000) { Moonsdisplay = 'Infinitas' } else {Moonsdisplay = TotalMoons}
     var usermoons = Moonsdisplay;
     finalOutput += `**${bot.users.get(resp[i].ID.split("_")[1]).tag}**` + ' ' + usermoons + ` moons \n`; // ~-~ Moons: ${resp[i].data} 
-    let msgtosend = await sortBy(finalOutput, item => 'desc:' + item)
+  console.log(finalOutput)
+  var arr = ['teste', 'do', 'caralho']
+    //var msgtosend = sortBy(finalOutput, item => `desc:${item}`)
   }
   message.channel.send({
       embed: {

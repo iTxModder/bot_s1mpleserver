@@ -25,7 +25,10 @@
     "array-sort": "^1.0.0",
     "random-puppy": "^1.1.0",
     "canvas": "^2.5.0",
-    "array-sort-by": "^1.2.1"
+    "array-sort-by": "^1.2.1",
+    "chalk": "^2.4.2",
+    "cleverbot-node": "^0.3.11",
+    "entities": "^1.1.2"
   },
   "engines": {
     "node": "8.x"

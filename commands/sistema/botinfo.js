@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("ff0000")
         .setThumbnail(bicon)
         .addField("Nome do Bot", bot.user.username)
-        .addField("Criado Por", "<@318149637964038144> | <@392053413741068288> | <@72720369346936842> | <@472720369346936842>")
+        .addField("Criado Por", " <@472720369346936842> | <@311558677851144193> | <@392053413741068288> ")
         .addField("Criado Em", bot.user.createdAt)
         .addField("Total Membros", "`" + bot.users.size + "` Total\n`" + totalOnline + "` Online\n\n`" + message.guild.memberCount + "` este servidor\n`" + guildTotalOnline + "` online neste servidor")
         .addField("Total Canais", "`" + (bot.channels.size - nonGuildChannels)+ "` Total\n`" + message.guild.channels.size + "` neste servidor\n`" + totalTextChannels + "` Canais Texto\n`" + totalVoiceChannels + "` Canais Voz")
