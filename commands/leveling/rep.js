@@ -34,6 +34,6 @@ module.exports.command = {
     aliases: ["reputation"],
     description: 'Dê rep a um usuário',
     category: "leveling",
-    usage: 's!rep <usuário>',
+    usage: 'rep <usuário>',
     enabled: true
 }

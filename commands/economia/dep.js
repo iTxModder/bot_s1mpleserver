@@ -40,7 +40,7 @@ exports.run = async (client, message, args, config) => {
     .setAuthor(`Cofre de ${uservault}`)
     .setThumbnail(uservault.avatarURL)
     .setColor("RANDOM")
-    .addField(`<:certo:580518832611786753> Depositadas ${amount} moons no banco.`, "-------------")
+    .addField(`<:certo:580518832611786753> Foram depositadas ${amount} moons no banco.`, "-------------")
     
     message.channel.send(vaultembed)
 }
@@ -51,6 +51,6 @@ module.exports.command = {
     aliases: ['deposit'],
     description: 'Deposita dinheiro no banco',
     category: "economia",
-    usage: '`s!dep <quantia> | s!dep all',
+    usage: '`dep <quantia> | s!dep all',
     enabled: true
 }

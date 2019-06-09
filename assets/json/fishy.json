@@ -1,0 +1,22 @@
+{
+	"lixo": {
+		"symbol": "🔧",
+		"max": 2,
+		"min": 1
+	},
+	"comum": {
+		"symbol": "🐟",
+		"max": 5,
+		"min": 2
+	},
+	"incomum": {
+		"symbol": "🐠",
+		"max": 10,
+		"min": 5
+	},
+	"raro": {
+		"symbol": "🐡",
+		"max": 20,
+		"min": 10
+	}
+}

@@ -28,6 +28,6 @@ module.exports.command = {
     aliases: ["reputationrank", "replevel"],
     description: 'Veja a rep de um usuário',
     category: "leveling",
-    usage: 's!replevel <usuário>',
+    usage: 'replevel <usuário>',
     enabled: true
 }

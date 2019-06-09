@@ -28,7 +28,8 @@
     "array-sort-by": "^1.2.1",
     "chalk": "^2.4.2",
     "cleverbot-node": "^0.3.11",
-    "entities": "^1.1.2"
+    "entities": "^1.1.2",
+    "common-tags": "^1.8.0"
   },
   "engines": {
     "node": "8.x"

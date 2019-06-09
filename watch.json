@@ -9,7 +9,8 @@
     "exclude": [
       "^commands/",
       "^not-ready/",
-	  "^backups/"
+	    "^backups/",
+      "^assets/"
     ],
     "include": [
       "\\.js$",

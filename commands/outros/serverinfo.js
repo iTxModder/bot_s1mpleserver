@@ -49,6 +49,6 @@ module.exports.command = {
     name: 'serverinfo',
     description: 'Exibe informações sobre o servidor atual.',
     category: "info",
-    usage: 's!serverinfo',
+    usage: 'serverinfo',
     enabled: true
 }

@@ -29,6 +29,7 @@
 //}
 
 const Discord = require("discord.js");
+const { stripIndents } = require('common-tags');
 
 exports.run = async (bot, message, args, tools, con) => {
   let embedchoice;
@@ -335,16 +336,23 @@ sentEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
      let command = args[0];
     let cmd = bot.commands.get(command);
      if(bot.commands.has(command)) {
-       if (cmd.command.enabled) {
+       //if (cmd.command.enabled) {
          command = bot.commands.get(command);
          let commandhelp = new Discord.RichEmbed()
          .setColor("PURPLE")
-         .setAuthor(`${bot.user.username} ${command.command.name} help`)
+         .setAuthor(`${bot.user.username}:  ${command.command.name}`)
          .setThumbnail(bot.user.displayAvatarURL)
-         .setDescription(`**• Nome:** ${command.command.name} \n \n **• Descrição:** ${command.command.description} \n \n **• Permissão:** ${command.command.permission} \n \n **• Utilização:** ${command.command.usage}`)
-         .setFooter(`Requested by ${message.author.username}`);
+         .setDescription(stripIndents`O prefixo do bot é: \`${bot.prefix}\`\n
+    ❯ Comando: ${command.command.name.slice(0, 1).toUpperCase() + command.command.name.slice(1)}
+    ❯ Descrição: ${command.command.description || '`Sem descrição`'}
+    ❯ Utilização: ${command.command.usage ? `\`${bot.prefix}${command.command.name} ${command.command.usage}\`` : '`Sem utilização`'}
+    ❯ Acessivel por: ${command.command.accessableby || '`Membros`'}
+    ❯ Aliases: ${command.command.aliases ? command.aliases.join(', ') : '`Nenhum`'}
+    ❯ Permissão: ${command.command.accessableby || '`Sem permissão`'}
+    ❯ Ativado: ${command.command.enabled || '`False`'}`)
+         .setFooter(`Pedido por ${message.author.username}`);
 message.channel.send(commandhelp);
-    } else return message.channel.send(`${message.author.username} Desculpa. O comando foi desativado!!`)
+    //} else return message.channel.send(`${message.author.username} Desculpa. O comando foi desativado!!`)
   }
  } else {
   helpfunc()
@@ -354,6 +362,6 @@ message.channel.send(commandhelp);
     name: 'help',
     description: 'Todos os comandos disponiveis',
     category: "sistema",
-    usage: 's!help',
+    usage: 'help',
     enabled: true
 }

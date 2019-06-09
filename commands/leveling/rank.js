@@ -80,6 +80,6 @@ module.exports.command = {
     name: 'rank',
     description: 'Veja o seu nível de xp!',
     category: "leveling",
-    usage: 's!rank',
+    usage: 'rank',
     enabled: true
 }

@@ -13,7 +13,7 @@ module.exports.command = {
     name: 'S1mpleParaSempre',
     aliases: ["SimpleParaSempre"],
     description: 'Suprise!',
-    usage: 's!simpleparasempre',
+    usage: 'simpleparasempre',
     category: "outros",
     enabled: true
 }

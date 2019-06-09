@@ -25,6 +25,6 @@ module.exports.command = {
     name: 'channelinfo',
     description: 'Mostra as especificações de um canal',
     category: "info",
-    usage: 's!channelinfo',
+    usage: 'channelinfo',
     enabled: true
 }

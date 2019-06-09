@@ -66,6 +66,6 @@ module.exports.command = {
     name: 'level',
     description: 'Veja o seu level e xp!',
     category: "leveling",
-    usage: 's!level',
+    usage: 'level',
     enabled: true
 }

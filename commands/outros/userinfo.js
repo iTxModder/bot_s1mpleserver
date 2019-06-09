@@ -37,6 +37,6 @@ module.exports.command = {
     name: 'userinfo',
     description: 'Mostra as informações de um usuario',
     category: "info",
-    usage: ['s!userinfo <usuario>'],
+    usage: ['userinfo <usuario>'],
     enabled: true
 }

@@ -17,6 +17,6 @@ module.exports.command = {
     aliases: ['experience'],
     description: 'Veja o seu xp!',
     category: "leveling(deprecated)",
-    usage: 's!xp',
+    usage: 'xp',
     enabled: false
 }

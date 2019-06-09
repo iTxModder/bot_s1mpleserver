@@ -7,7 +7,7 @@ let role = message.mentions.roles.first() || message.guild.roles.get(args[0]) ||
         const roleinfo = new Discord.RichEmbed()
         .setColor(role.hexColor)
         .setTitle(`Role: ${role.name}`)
-        .addField('Members', role.members.size, true)
+        .addField('Membros', role.members.size, true)
         .addField('Cor', role.hexColor, true)
         .addField('Criada Em', role.createdAt.toDateString(), true)
         .addField('Editada', role.editable.toString(), true)
@@ -21,6 +21,6 @@ module.exports.command = {
     name: 'roleinfo',
     description: 'Mostra as informações de uma role',
     category: "sistema",
-    usage: ['s!roleinfo <role>'],
+    usage: ['roleinfo <role>'],
     enabled: true
 }

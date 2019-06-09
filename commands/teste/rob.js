@@ -23,7 +23,7 @@ if(lastrob !== null && cooldown - (Date.now() - lastrob) > 0) {
         return message.channel.send('<:No:580518832939204628> **|** Você precisa de mencionar um usuário para roubar')
     }
     if (author < 250) { // if the authors balance is less than 250, return this.
-        return message.channel.send('<:No:580518832939204628> **|** Você precisa pelo menos de **250 Moons** para roubar alguém.')
+        return message.channel.send('<:No:580518832939204628> **|** Você precisa de pelo menos de **250 Moons** para roubar alguém.')
     }
 
     if (targetuser = 0) { // if mentioned user has 0 or less, it will return this.

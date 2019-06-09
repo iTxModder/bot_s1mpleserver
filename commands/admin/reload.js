@@ -1,35 +1,31 @@
-const Botconfig = require("../../botconfig.json");
-const fs = require('fs')
-exports.run = (bot, message, args) => {
-  if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Moderador")) {
-                      
+module.exports.run = async (bot, message, args) => {
+  //if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
+const { readdirSync } = require('fs'); 
+const { join } = require('path');
 
-const loadCommands = module.exports.loadCommands = (dir = "./commands/") => {
-  message.reply(`<a:AcceptGif:569565878551838750> **|** Todos os comandos bot foram reiniciado com sucesso.`)
-    fs.readdir(dir, (error, files) => {                   // Reading the Dir
-        if (error) return console.log(error);                    
+module.exports.run = async (bot, message, args) => {
 
-        files.forEach((file) => {                       // reading Files from each dir
-            if (fs.lstatSync(dir + file).isDirectory()) {
-                loadCommands(dir + file + "/");
-                return;
-            }
+  if(!bot.owners.includes(message.author.id)) return message.channel.send('<:zAlert:580520339705167872> **|** Apenas o dono do bot pode fazer isso! **|** <:zAlert:580520339705167872>');
 
-            delete require.cache[require.resolve(`${dir}${file}`)];
-
-            let props = require(`${dir}${file}`); // defining props for each file for each dir
-            console.log('Reload' + props )
-
-            bot.commands.set(props.command.name, props); // giving name to the command
-
-            if (props.command.aliases)  props.command.aliases.forEach(alias => { 
-                bot.aliases.set(alias, props.command.name); // giving aliases to the command [second name]
-            });
-        });
-    });
+  if(!args[0]) return message.channel.send('Por favor especifique um comando para reiniciar.');
+  const commandName = args[0].toLowerCase();
+  if(!bot.commands.get(commandName)) return message.channel.send('Esse comando não existe. Tente outra vez.');
+  readdirSync(join(__dirname, '..')).forEach(f => {
+    const files = readdirSync(join(__dirname,'..',f));
+    if(files.includes(commandName + '.js')) {
+      try {
+        delete require.cache[require.resolve(`../${f}/${commandName}.js`)]; // usage !reload <name>
+        bot.commands.delete(commandName);
+        const pull = require(`../${f}/${commandName}.js`);
+        bot.commands.set(commandName, pull);
+        return message.channel.send(`<a:zLoading:583333775971319808> Reiniciado com sucesso ${commandName}.js!`);
+      } catch(e) {
+        return message.channel.send(`Não pude reiniciar: \`${args[0].toUpperCase()}\``);
+      }
+    }
+  });
 };
-loadCommands(); 
-  }
+  //}
 };
 
 
@@ -37,6 +33,6 @@ module.exports.command = {
     name: 'reload',
     description: 'Reinicia algum comando sem reiniciar o bot todo.',
     category: "admin",
-    usage: ['s!reload [comando]'],
-    enabled: false
+    usage: ['reload [comando]'],
+    enabled: true
 }

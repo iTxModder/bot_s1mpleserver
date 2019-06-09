@@ -27,6 +27,6 @@ module.exports.command = {
     name: 'remove',
     description: 'Comando para retirar moons de um usuário',
     category: "economia",
-    usage: 's!remove [moons] [user]',
+    usage: 'remove [moons] [user]',
     enabled: true
 }

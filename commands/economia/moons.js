@@ -27,6 +27,6 @@ module.exports.command = {
     name: 'moons',
     description: 'Numero de moons que você tem',
     category: "economia",
-    usage: 's!moons',
+    usage: 'moons',
     enabled: true
 }

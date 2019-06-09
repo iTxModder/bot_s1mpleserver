@@ -4,7 +4,7 @@ const ownerID = Botconfig.ownerID
 exports.run = async(bot, message, args) => {
   let msgauthor = message.author.id
 
-    if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Funcionário")) {
+    if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
 
 
     if (!message.mentions.members.first()) return message.reply("<:zAlert:580520339705167872> **|** Para quem você quer setar moons? :crystal_ball:?")
@@ -28,6 +28,6 @@ module.exports.command = {
     name: 'set',
     description: 'Comando para setar moons, apenas BotOwner',
     category: "admin",
-    usage: 's!set [moons] [user]',
+    usage: 'set [moons] [user]',
     enabled: true
 }

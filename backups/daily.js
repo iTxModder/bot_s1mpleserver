@@ -20,12 +20,12 @@ let lastdaily = await db.fetch(`lastdaily_${message.author.id}`)
 if(lastdaily !== null && cooldown - (Date.now() - lastdaily) > 0) {
     let timeObj = ms(cooldown - (Date.now() - lastdaily));
 
-    message.channel.send(`<:errado:580518832939204628> **|** Você já pegou suas moons diarias. Você precisa esperar **${timeObj.hours}h ${timeObj.minutes}m ${timeObj.seconds}s** `)
+    message.channel.send(`<:errado:580518832939204628> **|** Você já pegou suas moons diárias. Você precisa esperar **${timeObj.hours}h ${timeObj.minutes}m ${timeObj.seconds}s** `)
 
 } else { 
 if(message.member.roles.some(a => a.name === "👑 S1mple Nitro Classic")){
 message.channel.send(`<a:economia:580518832792272916> **|** Você recebeu suas ${amount9} moons diarias.
-<:certo:580518832611786753> **|** Como é 👑 S1mple Nitro Classic ganhou mais &{amount} moons!`)
+<:certo:580518832611786753> **|** Como você é 👑 S1mple Nitro Classic ganhou mais &{amount} moons!`)
 
     db.set(`lastdaily_${message.author.id}`, Date.now());
     db.add(`moons_${message.author.id}`, amount)

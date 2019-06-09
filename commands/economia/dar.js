@@ -33,6 +33,6 @@ module.exports.command = {
     name: 'dar',
     description: 'Comando para dar moons, apenas BotOwner',
     category: "admin",
-    usage: 's!dar [moons] [user]',
+    usage: 'dar [moons] [user]',
     enabled: true
 }

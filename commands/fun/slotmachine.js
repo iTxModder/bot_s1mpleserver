@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
   let lastslots = await db.fetch(`lastslots_${message.author.id}`)
     let timeObj = ms(cooldown - (Date.now() - lastslots));
     if(lastslots !== null && cooldown - (Date.now() - lastslots) > 0) { 
-    message.channel.send(`😴 EH LÁ!. O teclado até pegou fogo!:fire: Tem que esperar **${timeObj.hours}h ${timeObj.minutes}m ${timeObj.seconds}s** `)
+    message.channel.send(`😴 Ih, olha lá!. O teclado até pegou fogo!:fire: Tem que esperar **${timeObj.hours}h ${timeObj.minutes}m ${timeObj.seconds}s** `)
      } else {
     
   if (!args.length) {let amount = 100}
@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
         let wEmbed = new Discord.RichEmbed()
             .setFooter("Ganhou!!!!!", aicon)
             .setTitle(':slot_machine:Slots:slot_machine:')
-            .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
+            .addField('Resultado:', slots[result1] + slots[result2] + slots[result3], true)
             .setColor("#f4e842");
         message.channel.send(wEmbed);
       })
@@ -46,7 +46,7 @@ exports.run = async (client, message, args) => {
         let embed = new Discord.RichEmbed()
             .setFooter('Perdeu!', aicon)
             .setTitle(':slot_machine:Slots:slot_machine:')
-            .addField('Result', slots[result1] + slots[result2] + slots[result3], true)
+            .addField('Resultado', slots[result1] + slots[result2] + slots[result3], true)
             .setColor("#f4e842");
         message.channel.send(embed);
           })
@@ -60,6 +60,6 @@ exports.command = {
     name: 'slots',
     description: 'Aposta na slotmachine do server e ganha moons!',
     category: "fun",
-    usage: ['s!slots <quantia>'],
+    usage: ['slots <quantia>'],
     enabled: true
 }

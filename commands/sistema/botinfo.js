@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
 
         let bicon = bot.user.displayAvatarURL;
         let botembed = new Discord.RichEmbed()
-        .setDescription("Eu sou um Bot criado para animar o seu servidor e divertir você, por isso se tem alguma dúvida contacte um Bot Helper.")
+        .setDescription("Eu sou um Bot criado para animar o seu servidor e divertir você, por isso se tem alguma dúvida contate um developer.")
         .setColor("ff0000")
         .setThumbnail(bicon)
         .addField("Nome do Bot", bot.user.username)
@@ -44,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Total Canais", "`" + (bot.channels.size - nonGuildChannels)+ "` Total\n`" + message.guild.channels.size + "` neste servidor\n`" + totalTextChannels + "` Canais Texto\n`" + totalVoiceChannels + "` Canais Voz")
 	.addField("Total Servidores", bot.guilds.size)
 	.addField("Ping", `${bot.pings[0]}ms\``)
-        .addField('P.S: O bot reinicia a cada 12 horas para garantir que tudo funciona bem. ;)')
+        .addField('P.S: O bot reinicia a cada 12 horas para garantir que tudo funcione bem. ;)')
 	.setTimestamp(message.createdAt)
 
         return message.channel.send(botembed);
@@ -53,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.command = {
     name: 'botinfo',
     description: 'Informações do Bot',
-    usage: 's!botinfo',
+    usage: 'botinfo',
     category: "info",
     enabled: true
 }

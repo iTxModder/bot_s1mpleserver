@@ -45,6 +45,6 @@ module.exports.command = {
     name: 'reporte',
     description: 'Reporta algum utilizador',
     category: "sistema",
-    usage: 's!reporte <membro> <razão>',
+    usage: 'reporte <membro> <razão>',
     enabled: true
 }

@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.command = {
     name: 'avatar',
     description: 'Vê o avatar de alguém',
-    usage: 's!avatar <usuário>',
+    usage: 'avatar <usuário>',
     category: "outros",
     enabled: true
 }

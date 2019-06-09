@@ -54,7 +54,7 @@ exports.run = async (bot, message, args, tools, con) => {
   let embedtes = new Discord.RichEmbed()
         .setAuthor("Lista de Comandos")
         .setColor(0xff0000)
-        bot.commands.filter(cmd => cmd.command.category === "teste").map(cmd => embedadm.addField(cmd.command.name , `**${cmd.command.description}**`));
+        bot.commands.filter(cmd => cmd.command.category === "teste").map(cmd => embedtes.addField(cmd.command.name , `**${cmd.command.description}**`));
   //--------------------------------------------------
 
 async function helpfunc() {
@@ -177,6 +177,6 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
     name: 'staffhelp',
     description: 'Todos os comandos disponiveis para staff',
     category: "admin",
-    usage: 's!staffhelp',
+    usage: 'staffhelp',
     enabled: true
 }

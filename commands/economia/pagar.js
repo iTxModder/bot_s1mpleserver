@@ -6,7 +6,7 @@ exports.run = async(bot, message, args) => {
     let targetMember = message.mentions.members.first(),
         amount = parseInt(args.join(' ').replace(targetMember, ''))
 
-        if(isNaN(amount)) return message.reply("<:errado:580518832939204628> **|** Por favor indique a quantidade de moons que quer pagar.")
+        if(isNaN(amount)) return message.reply("<:errado:580518832939204628> **|** Por favor indique a quantidade de moons que você deseja pagar.")
         if(amount < 0) return message.reply('<:errado:580518832939204628> **|** Você não pode pagar moons negativas.')
 
         let targetMoons = await db.fetch(`moons_${targetMember.id}`),
@@ -30,6 +30,6 @@ module.exports.command = {
     aliases: ['pagar'],
     description: 'Pague ou ofereça moons',
     category: "economia",
-    arg: '``s!pay [moons] [user]``',
+    arg: '``pay [moons] [user]``',
     enabled: true
 }

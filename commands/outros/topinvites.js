@@ -28,7 +28,7 @@ exports.run = async (client, message, args, tools) => {
     // Create the output embed
     const embed = new Discord.RichEmbed()
         .setColor(0xCB5A5E)
-        .addField('Top de Convites', `\`\`\`${table.table(possibleInvites)}\`\`\``); // This will be the field holding the leaderboard
+        .addField('Invite top', `\`\`\`${table.table(possibleInvites)}\`\`\``); // This will be the field holding the leaderboard
         // Be sure to put the table in a codeblock for proper formatting
 
     // Now, we can send the embed to chat - Instead of a regular message, we can use quick.hook
@@ -43,6 +43,6 @@ module.exports.command = {
     name: 'topinvites',
     description: 'Top dos convites.',
     category: "outros(deprecated)",
-    usage: 's!topinvites',
+    usage: 'topinvites',
     enabled: false
 }

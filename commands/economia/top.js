@@ -15,7 +15,9 @@ for (var i in resp) {
     let TotalMoons;
     let moons = await db.fetch(`moons_${us.id}`)
     if (moons === null) db.set(`moons_${us.id}`, 0);
-    else TotalMoons = moons;
+    let vaultmoons = await db.fetch(`vault_moons_${us.id}`)
+    if (vaultmoons === null) db.set(`vault_moons_${us.id}`, 0);
+    else TotalMoons = (moons + vaultmoons);
     if (TotalMoons === undefined) TotalMoons = 0;
     let amount = parseInt(args.join(' '));
     
@@ -25,6 +27,10 @@ for (var i in resp) {
   console.log(finalOutput)
   var arr = ['teste', 'do', 'caralho']
     //var msgtosend = sortBy(finalOutput, item => `desc:${item}`)
+  var finalmoonordenado = await db.startsWith('moons', { sort: '.data'}).then(i => {
+    console.log(i); 
+    // Returns a SORTED array, where the beginning of the ID starts with 'userBalance'
+})
   }
   message.channel.send({
       embed: {
@@ -36,9 +42,9 @@ for (var i in resp) {
 }
 module.exports.command = {
     name: 'topmoons',
-    aliases: ['leaderboard'],
+    aliases: ['leaderboard', 'top'],
     description: 'Veja os mais ricos do servidor!',
     category: "Economia",
-    usage: 's!topmoons',
+    usage: 'topmoons',
     enabled: false
 }

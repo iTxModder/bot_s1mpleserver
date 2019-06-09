@@ -40,7 +40,7 @@ exports.run = async (client, message, args, config) => {
     .setAuthor(message.author.displayName)
     .setThumbnail(message.user.avatarURL)
     .setColor("RANDOM")
-    .addField(`<a:economia:580518832792272916> **|** O seu cofre tem agora ${vaultmoons} moons guardadas.`)
+    .addField(`<a:economia:580518832792272916> **|** O seu cofre tem ${vaultmoons} moons guardadas.`)
     
     message.channel.send(depembedsuccess)
         } else {

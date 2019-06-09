@@ -119,6 +119,6 @@ module.exports.command = {
     name: 'daily',
     description: 'Pegue sua recompensa diária',
     category: "economia",
-    usage: 's!daily',
+    usage: 'daily',
     enabled: true
 }

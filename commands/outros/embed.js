@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
 module.exports.command = {
     name: 'embed',
     description: 'Faz um embed com uma mensagem',
-    usage: 's!embed <mensagem>',
+    usage: 'embed <mensagem>',
     category: "outros",
     enabled: true
 }

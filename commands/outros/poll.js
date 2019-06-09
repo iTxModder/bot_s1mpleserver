@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = async (bot, message, args, ops) => {
 
 	if (!message.member.roles.find("name", "@everyone")) { //Whatever role you want, I pick @everyone because everyone can use this command
-		message.channel.send('<:errado:580518832939204628> **|** Não podes usar este comando.');
+		message.channel.send('<:errado:580518832939204628> **|** Você não pode usar este comando.');
 		return;
 	}
   
@@ -11,7 +11,7 @@ exports.run = async (bot, message, args, ops) => {
   const yes = bot.emojis.find(emoji => emoji.name === "❎");
   
     // Check for input
-    if (!args[0]) return message.channel.send('<:Ferc:559356192774684694> Usagem própria: s!poll <questão>');
+    if (!args[0]) return message.channel.send('<:Ferc:559356192774684694> Modelo de uso: s!poll <questão>');
     
     // Create Embed
     const embed = new Discord.RichEmbed()
@@ -34,6 +34,6 @@ module.exports.command = {
     name: 'poll',
     description: 'Faz uma votação.',
     category: "outros",
-    usage: ['s!poll <questão>'],
+    usage: ['poll <questão>'],
     enabled: true
 }

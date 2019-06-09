@@ -27,7 +27,7 @@ exports.run = (bot, message, args) => {
     message.reply(`Sugestão enviada.`)
     return;
   } else {
-    message.reply('Por favor regista-te em #🐦 • registro para usar este comando.')
+    message.reply('Por favor registre-se em #🐦 • registro para usar este comando.')
   }
 }
 
@@ -35,7 +35,7 @@ module.exports.command = {
     name: 'sugerir',
     aliases: ['suggest'],
     description: 'Sugere algo',
-    usage: 's!sugerir <sugestão>',
+    usage: 'sugerir <sugestão>',
     category: "outros",
     enabled: true
 }

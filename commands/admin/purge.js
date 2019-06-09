@@ -32,6 +32,6 @@ module.exports.command = {
     name: 'purge',
     description: 'Faz delete a certas mensagens.',
     category: "admin",
-    usage: ['s!purge <número>'],
+    usage: ['purge <número>'],
     enabled: true
 }

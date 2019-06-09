@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("#00FF00")
         .addField('Comando adicionado',
             `
-            **${botconfig.prefix}rank**\nVê o teu nível.` ))
+            **${bot.prefix}help**\nPesquisa por comando adicionada.` ))
         //.addField('\u200B', "Para todos os comandos de música disponíveis, use ``>help music``"));
 }
 
@@ -16,7 +16,7 @@ module.exports.command = {
     name: 'update',
     description: 'Mostra as atualizações mais recentes do bot.',
     category: "Sistema",
-    usage: 's!update',
+    usage: 'update',
     enabled: true
 }
 

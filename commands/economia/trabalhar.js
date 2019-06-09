@@ -70,6 +70,6 @@ module.exports.command = {
     name: 'work',
     description: 'Parte em trabalho para planetas à procura de moons',
     category: "economia",
-    usage: 's!work',
+    usage: 'work',
     enabled: true
 }

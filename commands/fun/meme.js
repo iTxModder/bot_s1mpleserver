@@ -20,6 +20,6 @@ exports.command = {
     permission: "Nenhuma",
     description: 'Vê um meme!',
     category: "fun",
-    usage: ['s!meme'],
+    usage: ['meme'],
     enabled: true
 }

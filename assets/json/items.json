@@ -1,0 +1,18 @@
+{
+	"Auto Claim Card": {
+		"symbol": "💳",
+    "price": 2000
+	},
+	"S1mple Nitro Classic": {
+		"symbol": "👑",
+		"price": 100000
+	},
+	"color": {
+		"symbol": "🎨",
+		"price": 2000
+	},
+	"Boost XP (x3)": {
+		"symbol": "🆙",
+		"price": 1000
+	}
+}

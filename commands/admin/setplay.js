@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     let setgamembed = new Discord.RichEmbed()
         .setColor(0x07DE47)
         .setAuthor(`<:certo:580518832611786753> Jogo setado com sucesso`, 'https://i.imgur.com/M6hqbcc.png')
-        .setDescription(`<:Ferc:559356192774684694> ${client.user.username} está agora a jogar \`${argcustom}\`.`)
+        .setDescription(`<:Ferc:559356192774684694> ${client.user.username} está jogando \`${argcustom}\`.`)
         .setFooter(`<:Ferc:559356192774684694> Setado por ${message.author.username}.`, message.author.avatarURL);
 
     let wrongembed = new Discord.RichEmbed()
@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
   
 if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
       client.user.setActivity(argcustom)
-    console.log(`${client.user.username} Está agora a jogar ${argcustom}.`)
+    console.log(`${client.user.username} Está jogando ${argcustom}.`)
     message.channel.send(setgamembed)
 
 } else {
@@ -42,6 +42,6 @@ module.exports.command = {
     name: 'setplay',
     description: 'seta o jogo do bot',
     category: "admin",
-    usage: ['s!setplay <texto>'],
+    usage: ['setplay <texto>'],
     enabled: true
 }

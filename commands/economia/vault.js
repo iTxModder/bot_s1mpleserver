@@ -33,7 +33,7 @@ if(!vaultuser){
       } else {
         message.reply(`
 <:Alert:580520339705167872> Ocorreu um erro ao obter as moons do banco desse usuário. Por favor tente outra vez. <:Alert:580520339705167872> 
-Se o problema persistir, por favor contacte um dos devs.
+Se o problema persistir, por favor contate um dos devs.
 Para saber quem são os devs, use ***s!botinfo***`)
       }
       }
@@ -43,6 +43,6 @@ module.exports.command = {
     aliases: ['cofre'],
     description: 'Mostra o dinheiro que tens no banco, ou mostra o dinheiro que outro utilizador tem no banco.',
     category: "economia",
-    usage: '``s!vault``',
+    usage: '``vault``',
     enabled: true
 }

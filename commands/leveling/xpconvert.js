@@ -14,6 +14,6 @@ module.exports.command = {
     name: 'xpconvert',
     description: 'Converta xp em moons!',
     category: ["leveling", "economy"],
-    usage: 's!xpconvert <quantia>',
+    usage: 'xpconvert <quantia>',
     enabled: true
 }

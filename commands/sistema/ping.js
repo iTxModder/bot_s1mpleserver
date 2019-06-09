@@ -27,6 +27,6 @@ module.exports.command = {
     name: 'ping',
     description: 'Mostra a lâtencia do bot',
     category: "sistema",
-    usage: 's!ping',
+    usage: 'ping',
     enabled: true
 }

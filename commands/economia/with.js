@@ -28,9 +28,9 @@ exports.run = async (client, message, args, config) => {
       message.reply(`<a:economia:580518832792272916> Você não tem moons para retirar! <a:economia:580518832792272916>`)
     }
   } else {
-        if(isNaN(amount)) return message.reply("<:errado:580518832939204628> **|** Por favor indique a quantidade de moons que quer retirar do banco.")
+        if(isNaN(amount)) return message.reply("<:errado:580518832939204628> **|** Por favor indique a quantidade de moons que você deseja retirar do banco.")
         if(amount < 0) return message.reply('<:errado:580518832939204628> **|** Você não pode retirar moons negativas.')
-    if (amount > vaultmoons) { message.reply(`<:errado:580518832939204628> Não podes retirar tanto dinheiro! <:errado:580518832939204628>`)
+    if (amount > vaultmoons) { message.reply(`<:errado:580518832939204628> Você não pode retirar tanto dinheiro! <:errado:580518832939204628>`)
   } else {
   
   db.add(`moons_${message.author.id}`, amount)
@@ -54,6 +54,6 @@ module.exports.command = {
     aliases: ['withdraw'],
     description: 'Retira dinheiro do banco',
     category: "economia",
-    usage: '`s!with <quantia> | s!with all',
+    usage: '`with <quantia> | s!with all',
     enabled: true
 }
