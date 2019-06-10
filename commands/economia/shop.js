@@ -423,7 +423,7 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let acc = message.guild.roles.find(r => r.name === "💳 Auto Claim Card");
-        if(message.member.roles.has(acc)) { message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
+        if(message.member.roles.exists('name', acc)) { message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         } else {
         db.subtract(`moons_${message.author.id}`, 25000).then(message.member.addRole(acc).catch(console.error)).then(s1mplestorechannel.send(reciboacc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
       }
@@ -616,13 +616,13 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		    if (reaction.emoji.name === '✅') { //sim
       sentEmbed2.delete()
-      if (moons < 1000000) {
+      if (moons < 50000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let con = message.guild.roles.find(r => r.name === "💸 Contributor");
         if(message.member.roles.has(con)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
-        db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(con).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
+        db.subtract(`moons_${message.author.id}`, 50000).then(message.member.addRole(con).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
 
       }
     } else {
@@ -656,13 +656,13 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		    if (reaction.emoji.name === '✅') { //sim
       sentEmbed2.delete()
-      if (moons < 1000000) {
+      if (moons < 40000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let sup = message.guild.roles.find(r => r.name === "🌹 Supreme");
         if(message.member.roles.has(sup)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
-        db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(sup).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
+        db.subtract(`moons_${message.author.id}`, 40000).then(message.member.addRole(sup).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
 
       }
     } else {
@@ -696,13 +696,13 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		    if (reaction.emoji.name === '✅') { //sim
       sentEmbed2.delete()
-      if (moons < 1000000) {
+      if (moons < 35000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let div = message.guild.roles.find(r => r.name === "🌻 Divine");
         if(message.member.roles.has(div)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
-        db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(div).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
+        db.subtract(`moons_${message.author.id}`, 35000).then(message.member.addRole(div).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
 
       }
     } else {
@@ -736,13 +736,13 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		    if (reaction.emoji.name === '✅') { //sim
       sentEmbed2.delete()
-      if (moons < 1000000) {
+      if (moons < 30000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let ans = message.guild.roles.find(r => r.name === "🌺 Ancion");
         if(message.member.roles.has(ans)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
-        db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(ans).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
+        db.subtract(`moons_${message.author.id}`, 30000).then(message.member.addRole(ans).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
 
       }
     } else {
@@ -776,13 +776,13 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		    if (reaction.emoji.name === '✅') { //sim
       sentEmbed2.delete()
-      if (moons < 1000000) {
+      if (moons < 15000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let gla = message.guild.roles.find(r => r.name === "🌷 Gladiator");
         if(message.member.roles.has(gla)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
-        db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(gla).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
+        db.subtract(`moons_${message.author.id}`, 15000).then(message.member.addRole(gla).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
 
       }
     } else {
@@ -816,13 +816,13 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		    if (reaction.emoji.name === '✅') { //sim
       sentEmbed2.delete()
-      if (moons < 1000000) {
+      if (moons < 10000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let her = message.guild.roles.find(r => r.name === "🍁 Herald");
         if(message.member.roles.has(her)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
-        db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(her).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
+        db.subtract(`moons_${message.author.id}`, 10000).then(message.member.addRole(her).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
 
       }
     } else {
@@ -856,13 +856,13 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		    if (reaction.emoji.name === '✅') { //sim
       sentEmbed2.delete()
-      if (moons < 1000000) {
+      if (moons < 25000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
         let leg = message.guild.roles.find(r => r.name === "🥀 Legend");
         if(message.member.roles.has(leg)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
-        db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(leg).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
+        db.subtract(`moons_${message.author.id}`, 25000).then(message.member.addRole(leg).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
 
       }
     } else {
@@ -970,5 +970,5 @@ module.exports.command = {
     description: 'Vê a loja e compra itens!',
     category: "Economia",
     usage: 'shop',
-    enabled: false
+    enabled: true
 }
