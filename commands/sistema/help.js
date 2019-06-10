@@ -347,7 +347,7 @@ sentEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
     ❯ Descrição: ${command.command.description || '`Sem descrição`'}
     ❯ Utilização: ${command.command.usage ? `\`${bot.prefix}${command.command.name} ${command.command.usage}\`` : '`Sem utilização`'}
     ❯ Acessivel por: ${command.command.accessableby || '`Membros`'}
-    ❯ Aliases: ${command.command.aliases ? command.aliases.join(', ') : '`Nenhum`'}
+    ❯ Aliases: ${command.command.aliases ? command.command.aliases.join(', ') : '`Nenhum`'}
     ❯ Permissão: ${command.command.accessableby || '`Sem permissão`'}
     ❯ Ativado: ${command.command.enabled || '`False`'}`)
          .setFooter(`Pedido por ${message.author.username}`);

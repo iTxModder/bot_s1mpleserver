@@ -56,5 +56,5 @@ module.exports.command = {
     description: 'Roube alguém',
     category: "economia",
     arg: '``s!rob [user]``',
-    enabled: false
+    enabled: true
 }

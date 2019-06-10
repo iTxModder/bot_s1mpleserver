@@ -166,7 +166,11 @@ bot.on('message', async message => {
   if (xplevelmax === null) await db.set(`xplevelmax_${message.author.id}`, 100);
   if (xplevelmax === 0) await db.set(`xplevelmax_${message.author.id}`, 100);
   let amountxp = (Math.floor(Math.random() * 7) + 3  )
-  db.add(`xp_${message.author.id}`, amountxp)
+  //db.add(`xp_${message.author.id}`, amountxp)
+  if(message.member.roles.some(r => r.name === "🆙 Boost XP (3x)")) {
+		let boostedxp = (amountxp * 3)
+	db.add(`xp_${message.author.id}`, boostedxp)
+	} else {db.add(`xp_${message.author.id}`, amountxp)}
   //If user xp higher than 100 add level
   if (profile + 10 > xplevelmax) {
     await db.add(`xplevel_${message.author.id}`, 1)

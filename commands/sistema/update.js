@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("#00FF00")
         .addField('Comando adicionado',
             `
-            **${bot.prefix}help**\nPesquisa por comando adicionada.` ))
+            **${bot.prefix}shop**\nCompra itens!` ))
         //.addField('\u200B', "Para todos os comandos de música disponíveis, use ``>help music``"));
 }
 

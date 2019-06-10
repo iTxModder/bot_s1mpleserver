@@ -4,8 +4,7 @@ const ownerID = Botconfig.ownerID
 exports.run = async(bot, message, args) => {
   let msgauthor = message.author.id
 
-    if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
-
+ if(!bot.owners.includes(message.author.id)) return message.channel.send('<:zAlert:580520339705167872> **|** Apenas o dono do bot pode fazer isso! **|** <:zAlert:580520339705167872>');   
 
     if (!message.mentions.members.first()) return message.reply("<:zAlert:580520339705167872> **|** Para quem você quer setar moons? :crystal_ball:?")
     
@@ -21,7 +20,6 @@ exports.run = async(bot, message, args) => {
             db.set(`moons_${targetMember.id}`, amount)
 
             message.channel.send(`<:certo:580518832611786753> **|** Hey <@${targetMember.id}> você recebeu ${amount} moons  de <@${msgauthor}>`)
-    } else return message.channel.send("<:zAlert:580520339705167872> **|** Apenas o dono do bot pode fazer isso.");
 }
 
 module.exports.command = {
