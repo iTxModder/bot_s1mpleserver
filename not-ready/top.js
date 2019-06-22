@@ -45,5 +45,5 @@ module.exports.command = {
     description: 'Veja os mais ricos do servidor!',
     category: "Economia",
     usage: 's!top',
-    enabled: false
+    enabled: true
 }

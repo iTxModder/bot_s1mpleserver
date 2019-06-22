@@ -18,5 +18,5 @@ module.exports.command = {
     description: 'Veja o seu xp!',
     category: "leveling(deprecated)",
     usage: 'xp',
-    enabled: false
+    enabled: true
 }

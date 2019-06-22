@@ -6,9 +6,9 @@ exports.run = async(bot, message, args) => {
 
  if(!bot.owners.includes(message.author.id)) return message.channel.send('<:zAlert:580520339705167872> **|** Apenas o dono do bot pode fazer isso! **|** <:zAlert:580520339705167872>');   
 
-    if (!message.mentions.members.first()) return message.reply("<:zAlert:580520339705167872> **|** Para quem você quer setar moons? :crystal_ball:?")
+    if (!message.mentions.members.first()|| !args[0]) return message.reply("<:zAlert:580520339705167872> **|** Para quem você quer setar moons? :crystal_ball:?")
     
-    let targetMember = message.mentions.members.first(),
+    let targetMember = message.mentions.members.first() || message.guild.members.get(args[0]),
         amount = parseInt(args.join(' ').replace(targetMember, ''))
 
         if(isNaN(amount)) return message.reply("<:zAlert:580520339705167872> **|** Quantos moons você quer setar?")

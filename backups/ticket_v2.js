@@ -5,7 +5,7 @@ exports.run = async(bot, message, args) => {
   
   const serverStats = {
     guildID: '552275750376570880',
-    ticketCategoryID: '586598570292150272'
+    ticketCategoryID: '588307940851843092'
 
 }
   console.log('1')

@@ -2,7 +2,7 @@ const db = require('quick.db')
 const Discord = require('discord.js')
 
 exports.run = async(bot, message, args) => {
-let usermon = message.mentions.members.first();
+let usermon = message.mentions.members.first() || message.guild.members.get(args[0]);
 
 let usermoons = await db.fetch(`moons_${message.author.id}`)
 

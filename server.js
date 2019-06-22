@@ -5,7 +5,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 //bot.commands = new Discord.Collection();
 const { token, prefix, owners } = require('./botconfig.json');
-const {Collection } = require('discord.js');
+const {Collection } = require('discord.js'); 
 const { readdirSync } = require('fs');
 
 //Express
@@ -82,11 +82,9 @@ bot.on("ready", async () => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
         bot.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
     }, 10000);
-
 });
 
-
-	  // dont do anything if error occurs
+// dont do anything if error occurs
 	  // if this occurs bot probably can't send images or messages
   
 //bot.on("message", async message => {
@@ -139,6 +137,7 @@ bot.on("ready", async () => {
 	  // if this occurs bot probably can't send images or messages
   
 bot.on('message', async message => {
+  let nocmdChannel = message.guild.channels.find(`name`, "☕ • bate papo");
 
   
   if(message.author.bot || message.channel.type !== 'text') return;
@@ -147,7 +146,8 @@ bot.on('message', async message => {
   const args = message.content.slice(bot.prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
 
-  if(!message.content.startsWith(bot.prefix)) return;
+  if(!message.content.startsWith(bot.prefix)) return xp();
+  if(message.content.startsWith(bot.prefix) && message.channel.id === nocmdChannel) return message.reply('Não podes usar comandos aqui, seu corno!')
   const commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
   if(commandfile) { if(!bot.owners.includes(message.author.id) && !commandfile.command.enabled) return message.channel.send(`${message.author.username} Desculpa. O comando foi desativado!!`);
 
@@ -157,9 +157,9 @@ bot.on('message', async message => {
     commandfile.run(bot, message, args);
   } catch (e) {}
 
-
   
   //Sistema de xp
+  async function xp() {
   var profile = await db.fetch(`xp_${message.author.id}`)
   var level = await db.fetch(`xplevel_${message.author.id}`)
   var xplevelmax = await db.fetch(`xplevelmax_${message.author.id}`)
@@ -167,22 +167,42 @@ bot.on('message', async message => {
   if (xplevelmax === 0) await db.set(`xplevelmax_${message.author.id}`, 100);
   let amountxp = (Math.floor(Math.random() * 7) + 3  )
   //db.add(`xp_${message.author.id}`, amountxp)
-  if(message.member.roles.some(r => r.name === "🆙 Boost XP (3x)")) {
+  if(message.member.roles.some(r => r.name === "💳 Boost Card ( 2x )")) {
+		let boostedxp = (amountxp * 2)
+	db.add(`xp_${message.author.id}`, boostedxp)
+	} else {
+    if(message.member.roles.some(r => r.name === "💳 Boost Card ( 3x )")) {
 		let boostedxp = (amountxp * 3)
 	db.add(`xp_${message.author.id}`, boostedxp)
-	} else {db.add(`xp_${message.author.id}`, amountxp)}
+	} else {db.add(`xp_${message.author.id}`, amountxp)}}
   //If user xp higher than 100 add level
   if (profile + 10 > xplevelmax) {
     await db.add(`xplevel_${message.author.id}`, 1)
     await db.set(`xp_${message.author.id}`, 0)
     await db.add(`xplevelmax_${message.author.id}`, 50)
-    message.reply(`Subiste de nível!! Estás agora no nível: ${level}`)
+    var leveltoshow = await db.fetch(`xplevel_${message.author.id}`)
+    message.reply(`Subiste de nível!! Estás agora no nível: ${leveltoshow}`)
     
   }
-  
-	
+  }
+
+
+async function checkbxrole() {
+let cooldown = 600000		
+let bx2duration = await db.fetch(`bx2duration_${message.author.id}`)	
+if(bx2duration !== null && cooldown - (Date.now() - bx2duration) < 0) {
+	let bx2 = message.guild.roles.find(r => r.name === "💳 Boost Card ( 2x )");
+	message.member.removeRole(bx2).catch(console.error)
+}
+let bx3duration = await db.fetch(`bx3duration_${message.author.id}`)	
+if(bx3duration !== null && cooldown - (Date.now() - bx3duration) < 0) {
+	let bx3 = message.guild.roles.find(r => r.name === "💳 Boost Card ( 3x )");
+	message.member.removeRole(bx3).catch(console.error)
+}
+			};
+  checkbxrole()
 });                                        
-                                               
+
    
 
 

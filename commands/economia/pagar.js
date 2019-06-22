@@ -1,9 +1,9 @@
 const db = require('quick.db')
 exports.run = async(bot, message, args) => {
 
-    if (!message.mentions.members.first()) return message.reply("<:errado:580518832939204628> **|** Por favor, a quem quer pagar moons?")
+    if (!message.mentions.members.first() ||!args[0]) return message.reply("<:errado:580518832939204628> **|** Por favor, a quem quer pagar moons?")
     
-    let targetMember = message.mentions.members.first(),
+    let targetMember = message.mentions.members.first() || message.guild.members.get(args[0]),
         amount = parseInt(args.join(' ').replace(targetMember, ''))
 
         if(isNaN(amount)) return message.reply("<:errado:580518832939204628> **|** Por favor indique a quantidade de moons que você deseja pagar.")

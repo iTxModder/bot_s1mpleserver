@@ -61,5 +61,5 @@ module.exports.command = {
     description: 'Veja o seu nível de xp!',
     category: "leveling",
     usage: 's!rank',
-    enabled: false
+    enabled: true
 }

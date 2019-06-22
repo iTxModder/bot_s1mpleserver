@@ -2,6 +2,7 @@ dependencies:
   array-sort: 1.0.0
   array-sort-by: 1.2.1
   canvas: 2.5.0
+  cards: 1.0.1
   chalk: 2.4.2
   cleverbot-node: 0.3.11
   cleverbot.io: 1.0.4
@@ -12,6 +13,7 @@ dependencies:
   express: 4.16.4
   jimp: 0.6.4
   moment: 2.24.0
+  number-to-words: 1.2.4
   parse-ms: 2.1.0
   quick.db: 6.3.2
   quick.hook: 1.5.1
@@ -634,6 +636,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
+  /cards/1.0.1:
+    dependencies:
+      rand-utils: 1.0.0
+    dev: false
+    resolution:
+      integrity: sha512-hyk8q9PHDUQ9mDpSQUcO/M7/e5cD7BPjIy4kkGJr636fbnUkqPrtox6gzem3VC7va+AOmOMrE4HxExNccOTYaQ==
   /caseless/0.12.0:
     dev: false
     resolution:
@@ -1709,6 +1717,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
+  /number-to-words/1.2.4:
+    dev: false
+    resolution:
+      integrity: sha512-/fYevVkXRcyBiZDg6yzZbm0RuaD6i0qRfn8yr+6D0KgBMOndFPxuW10qCHpzs50nN8qKuv78k8MuotZhcVX6Pw==
   /oauth-sign/0.9.0:
     dev: false
     resolution:
@@ -1911,6 +1923,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-5Rmt7Y7Zz9TnU/mE/ywxCmOkHa3Evyag+HtTdlFIFOykdfs2jbZYl7xzZghdRD3GuBW/M9YvNB8nD7WBvtQMfQ==
+  /rand-utils/1.0.0:
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    resolution:
+      integrity: sha1-PTu5IBVmzpFFDNN0oAgOee1oMyg=
   /random-puppy/1.1.0:
     dependencies:
       eventemitter3: 1.2.0
@@ -2485,6 +2503,7 @@ specifiers:
   array-sort: ^1.0.0
   array-sort-by: ^1.2.1
   canvas: ^2.5.0
+  cards: ^1.0.1
   chalk: ^2.4.2
   cleverbot-node: ^0.3.11
   cleverbot.io: ^1.0.4
@@ -2495,6 +2514,7 @@ specifiers:
   express: ^4.16.4
   jimp: ^0.6.4
   moment: ^2.24.0
+  number-to-words: ^1.2.4
   parse-ms: ^2.0.0
   quick.db: ^6.3.2
   quick.hook: ^1.5.1

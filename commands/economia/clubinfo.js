@@ -1,7 +1,7 @@
-const Discord = require("discord.js");
-const db = require("quick.db")
+const Discord = require('discord.js')
+const db = require('quick.db')
 exports.run = async (bot, message, args) => {
-if(!message.member.roles.some(r => r.name === "Manager") || !message.member.roles.some(r => r.name === "Fundador") || !message.member.roles.some(r => r.name === "Administrador") | !message.member.roles.some(r => r.name === "S1mple Staff")) {
+  
   if(message.member.roles.some(r=>["🏅       Personas", "🏅       FSociety", "🥇       Central da Goiaba", "🥈       Uchiha", "🥉       Gold Thieves"].includes(r.name)) ) {
  if(message.member.roles.some(r=>["🏅       Personas"].includes(r.name)) ) {
    var club = message.guild.roles.find('name', "🏅       Personas")
@@ -23,11 +23,26 @@ if(!message.member.roles.some(r => r.name === "Manager") || !message.member.role
      }
    }
   }
-  db.set(`meta_${club}`, null)
-  } else {
-  message.reply("-_-")}
-};
+    console.log(club.name)
+    console.log(club.id)
+  let clubvault = club.name;
+      let vaultmoons = await db.fetch(`vaultmoons_${club}`)
+      if (vaultmoons === null) await db.set(`vaultmoons_${club}`, 0);
+  
+  let clubid = club.id
+  let membersWithRole = message.guild.roles.get(clubid).members;
+  let infoembed = new Discord.RichEmbed()
+  .setColor('#04da00')
+  .setAuthor(`Informação do clube ${club.name}`)
+  .setDescription(`Membros: ${membersWithRole.size}\n Moons: ${vaultmoons} `)
+  message.channel.send(infoembed)
+}
 
 module.exports.command = {
-    name: 'testcommand179324865'
-} 
+    name: 'clubinfo',
+    aliases: ['clubinformação'],
+    description: 'Vê a informação do clube',
+    category: "economia",
+    usage: '`clubinfo',
+    enabled: true
+}

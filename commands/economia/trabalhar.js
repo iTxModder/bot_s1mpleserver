@@ -18,7 +18,7 @@ exports.run = async(bot, message, args) => {
     if (moons === null) db.set(`moons_${message.author.id}`, 0);
     else TotalMoons = moons;
     if (TotalMoons === undefined) TotalMoons = 1;
-    let amount = (Math.floor(Math.random() * 30) + 10  )
+    let amount = (Math.floor(Math.random() * 80) + 20  )
     let amount2 = (Math.floor(Math.random() * 90) + 10  )
     let amount3 = (Math.floor(Math.random() * 70) + 10  )
      

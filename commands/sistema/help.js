@@ -75,6 +75,16 @@ exports.run = async (bot, message, args, tools, con) => {
         .setColor(0xff0000)
         bot.commands.filter(cmd => cmd.command.category === "leveling").map(cmd => embedlev.addField(cmd.command.name , `**${cmd.command.description}**`));
   //--------------------------------------------------
+  let embedtic = new Discord.RichEmbed()
+        .setAuthor("Lista de Comandos")
+        .setColor(0xff0000)
+        bot.commands.filter(cmd => cmd.command.category === "ticket").map(cmd => embedtic.addField(cmd.command.name , `**${cmd.command.description}**`));
+  //--------------------------------------------------
+  let embedart = new Discord.RichEmbed()
+        .setAuthor("Lista de Comandos")
+        .setColor(0xff0000)
+        bot.commands.filter(cmd => cmd.command.category === "manipulação").map(cmd => embedart.addField(cmd.command.name , `**${cmd.command.description}**`));
+  //--------------------------------------------------
 
 async function helpfunc() {
   console.log("1")
@@ -88,15 +98,17 @@ async function helpfunc() {
         .addField("🗂️ - Outros", "--------------------")
         .addField("🗒️ - Info", "--------------------")
         .addField("📊 - Leveling", "--------------------")
+        .addField("📝 - Ticket", "--------------------")
+        .addField("🎨 - Manipulação", "--------------------")
  let msg = await message.channel.send(mainhelpmsg).then(sentEmbed => {
   
-sentEmbed.react('💵').then(() => sentEmbed.react('🃏')).then(() => sentEmbed.react('📟')).then(() => console.log("2")).then(() => sentEmbed.react('📁')).then(() => sentEmbed.react('📋')).then(() => sentEmbed.react('📊')).then(() => sentEmbed.react('❌'));
+sentEmbed.react('💵').then(() => sentEmbed.react('🃏')).then(() => sentEmbed.react('📟')).then(() => console.log("2")).then(() => sentEmbed.react('📁')).then(() => sentEmbed.react('📋')).then(() => sentEmbed.react('📊')).then(() => sentEmbed.react('📝')).then(() => sentEmbed.react('🎨')).then(() => sentEmbed.react('❌'));
  message.delete({timeout: 1000});
 
   console.log("3")    
 
 const filter = (reaction, user) => {
-	return ['💵', '🃏', '📟', '📁', '📋', '📊', '❌'].includes(reaction.emoji.name) && user.id === message.author.id;
+	return ['💵', '🃏', '📟', '📁', '📋', '📊', '❌', '📝', '🎨'].includes(reaction.emoji.name) && user.id === message.author.id;
 };
 
 sentEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
@@ -141,7 +153,18 @@ sentEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
               sentEmbed.delete()
       
       
-		}}}}}}}
+		} else {
+      if (reaction.emoji.name === '📝') {
+              sentEmbed.delete()
+        embedticsend()
+      } else {
+        if (reaction.emoji.name === '🎨') {
+              sentEmbed.delete()
+        embedartsend()
+      }
+      }
+    }
+    }}}}}}
 	})
 	.catch(collected => {
 		console.log(`Coletadas ${collected.size}.`)
@@ -332,6 +355,67 @@ sentEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	});
       });
   };
+  //---------------------------
+    async function embedticsend() {
+    console.log(embedchoice)
+ let msg = await message.channel.send(embedtic).then(sentEmbed2 => {
+    sentEmbed2.react('🔙');
+   message.delete({timeout: 1000});
+
+const filter = (reaction, user) => {
+	return ['🔙'].includes(reaction.emoji.name) && user.id === message.author.id;
+};
+
+sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '🔙') {
+      console.log("delete")
+      sentEmbed2.delete()
+      helpfunc()
+	} else {
+    console.log("error")
+  }
+})
+	.catch(collected => {
+		console.log(`Coletadas ${collected.size}`);
+    sentEmbed2.delete()
+		message.reply('Tempo excedido');
+	});
+      });
+  };
+  //---------------------
+  async function embedartsend() {
+    console.log(embedchoice)
+ let msg = await message.channel.send(embedart).then(sentEmbed2 => {
+    sentEmbed2.react('🔙');
+   message.delete({timeout: 1000});
+
+const filter = (reaction, user) => {
+	return ['🔙'].includes(reaction.emoji.name) && user.id === message.author.id;
+};
+
+sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '🔙') {
+      console.log("delete")
+      sentEmbed2.delete()
+      helpfunc()
+	} else {
+    console.log("error")
+  }
+})
+	.catch(collected => {
+		console.log(`Coletadas ${collected.size}`);
+    sentEmbed2.delete()
+		message.reply('Tempo excedido');
+	});
+      });
+  };
+  //---------------------
   if(args[0]) {
      let command = args[0];
     let cmd = bot.commands.get(command);

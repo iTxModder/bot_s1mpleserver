@@ -29,7 +29,9 @@
     "chalk": "^2.4.2",
     "cleverbot-node": "^0.3.11",
     "entities": "^1.1.2",
-    "common-tags": "^1.8.0"
+    "common-tags": "^1.8.0",
+    "number-to-words": "^1.2.4",
+    "cards": "^1.0.1"
   },
   "engines": {
     "node": "8.x"

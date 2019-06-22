@@ -5,9 +5,9 @@ exports.run = async(bot, message, args) => {
     if(message.member.roles.some(r => r.name === "Manager") || message.member.roles.some(r => r.name === "Fundador") || message.member.roles.some(r => r.name === "Administrador")) {
  
 
-    if (!message.mentions.members.first()) return message.reply("<:zAlert:580520339705167872> **|** Mencione o usuário que você quer retirar os moons.")
+    if (!message.mentions.members.first() || !args[0]) return message.reply("<:zAlert:580520339705167872> **|** Mencione o usuário que você quer retirar os moons.")
     
-    let targetMember = message.mentions.members.first(),
+    let targetMember = message.mentions.members.first() || message.guild.members.get(args[0]),
         amount = parseInt(args.join(' ').replace(targetMember, ''))
 
         if(isNaN(amount)) return message.reply("<:zAlert:580520339705167872> **|** Quantos moons quer retirar do usuário?")

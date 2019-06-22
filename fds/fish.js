@@ -1,3 +1,8 @@
+var assets = require("./assets");
+var express = require("express");
+
+var app = express();
+app.use("/assets", assets);
 const fishes = require('./assets/json/fishy');
 const Discord = require('discord.js')
 const db = require('quick.db')
@@ -106,7 +111,7 @@ const fishID = Math.floor(Math.random() * 10) + 1;
 module.exports.command = {
     name: 'fish',
     description: 'Pesca e vende os teus peixes!',
-    category: "fun",
+    category: "teste",
     usage: ['fish sell|inv'],
-    enabled: true
+    enabled: false
 }

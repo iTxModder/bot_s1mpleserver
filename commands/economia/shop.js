@@ -27,6 +27,10 @@ module.exports.run = async (bot, message, args) => {
   let author = message.author.username
   let data = Date.now
   let s1mplestorechannel = message.guild.channels.find(`name`, "🐧 • s1mple store");
+  
+let cooldown = 600000	
+let bx3duration = await db.fetch(`bx3duration_${message.author.id}`)
+if(bx3duration !== null && cooldown - (Date.now() - bx3duration) > 0);
    
   //const name = args.join(' ');
   //      const file_content = fs.readFileSync('./assets/json/items.json', 'utf-8');
@@ -62,11 +66,11 @@ module.exports.run = async (bot, message, args) => {
   let embedsnc = new Discord.RichEmbed()
         .setAuthor("Loja do S1mple")
         .setColor(0xff0000)
-        .addField('De certeza que queres comprar `👑 S1mple Nitro Classic` por **1000000** moons?', '✅ - Sim\n ❎ - Não')
+        .addField('De certeza que queres comprar `🌠 StarLight` por **1000000** moons?', '✅ - Sim\n ❎ - Não')
   let embedcon = new Discord.RichEmbed()
         .setAuthor("Loja do S1mple")
         .setColor(0xff0000)
-        .addField('De certeza que queres comprar `💸 Contributor` por **500000** moons?', '✅ - Sim\n ❎ - Não')
+        .addField('De certeza que queres comprar `❄️ Senpai` por **500000** moons?', '✅ - Sim\n ❎ - Não')
   let embedsup = new Discord.RichEmbed()
         .setAuthor("Loja do S1mple")
         .setColor(0xff0000)
@@ -130,12 +134,12 @@ module.exports.run = async (bot, message, args) => {
     let recibosnc = new Discord.RichEmbed()
         .setAuthor("Loja do S1mple")
         .setColor(0xff0000)
-        .addField(`O utilizador @${author} comprou **👑 S1mple Nitro Classic**!`, 'Use `s!shop` para comprar items!')
+        .addField(`O utilizador @${author} comprou **🌠 StarLight**!`, 'Use `s!shop` para comprar items!')
 		    .setTimestamp(message.createdAt)
     let recibocon = new Discord.RichEmbed()
         .setAuthor("Loja do S1mple")
         .setColor(0xff0000)
-        .addField(`O utilizador @${author} comprou **💸 Contributor**!`, 'Use `s!shop` para comprar items!')
+        .addField(`O utilizador @${author} comprou **❄️ Senpai**!`, 'Use `s!shop` para comprar items!')
 		    .setTimestamp(message.createdAt)
     let recibosup = new Discord.RichEmbed()
         .setAuthor("Loja do S1mple")
@@ -191,7 +195,7 @@ async function shopfunc() {
         .addField("💳 - 💳 Cards", "Vê os Cards disponíveis")
         .addField("👑 - 👑 Cargos Especiais", "Vê os Cargos Especiais disponíveis")
         .addField("🎨 - 🎨 color", "Preço: 2500 Moons")
-        .addField("🆙 - 🆙 Boost XP (3x)", "Preço: 10000 Moons")
+        .addField("🆙 - 🆙 Boost XP (3x) - 10 horas", "Preço: 10000 Moons")
         //.addField("🗒️ - Info", "--------------------")
         //.addField("📊 - Leveling", "--------------------")
  let msg = await message.channel.send(mainshopmsg).then(sentEmbed => {
@@ -316,8 +320,8 @@ sentEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
         .setAuthor(`Loja do S1mple`)
         .setColor(0xff0000)
         .addField("Reage a uma das reacções para comprar esse item.", "--------------------")
-        .addField("1⃣ - 👑 S1mple Nitro Classic", "Preço: 1000000 Moons")
-        .addField("2⃣ - 💸 Contributor", "Preço: 50000 Moons")
+        .addField("1⃣ - 🌠 StarLight", "Preço: 1000000 Moons")
+        .addField("2⃣ - ❄️ Senpai", "Preço: 50000 Moons")
         .addField("3⃣ - 🌹 Supreme", "Preço: 40000 Moons")
         .addField("4⃣ - 🌻 Divine", "Preço: 35000 Moons")
         .addField("5⃣ - 🌺 Ancion", "Preço: 30000 Moons")
@@ -579,7 +583,7 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
       if (moons < 1000000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
-        let snc = message.guild.roles.find(r => r.name === "👑 S1mple Nitro Classic");
+        let snc = message.guild.roles.find(r => r.name === "🌠 StarLight");
         if(message.member.roles.has(snc)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
         db.subtract(`moons_${message.author.id}`, 1000000).then(message.member.addRole(snc).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
@@ -619,7 +623,7 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
       if (moons < 50000) {
         message.reply("<:errado:580518832939204628> **|** Você não tem moons suficientes.")
       } else {
-        let con = message.guild.roles.find(r => r.name === "💸 Contributor");
+        let con = message.guild.roles.find(r => r.name === "❄️ Senpai");
         if(message.member.roles.has(con)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
         db.subtract(`moons_${message.author.id}`, 50000).then(message.member.addRole(con).catch(console.error)).then(s1mplestorechannel.send(recibosnc)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
@@ -942,7 +946,7 @@ sentEmbed2.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
         if(message.member.roles.has(bx3)) return message.reply("<:errado:580518832939204628> **|** Você já tem esse item!")
         else {
         db.subtract(`moons_${message.author.id}`, 10000).then(message.member.addRole(bx3).catch(console.error)).then(s1mplestorechannel.send(recibobx3)).then(message.reply('<a:AcceptGif:569565878551838750> Compra efetuada com sucesso!'))}
-
+        db.set(`bx3duration_${message.author.id}`, Date.now());
       }
     } else {
       if (reaction.emoji.name === '❎') { //não

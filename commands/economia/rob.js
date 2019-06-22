@@ -5,11 +5,11 @@ const ms = require('parse-ms')
 exports.run = async (client, message, args, config) => {
 
 
-    let user = message.mentions.members.first()
+    let user = message.mentions.members.first() || message.guild.members.get(args[0]);
     let targetuser = await db.fetch(`moons_${user.id}`) 
     let author = await db.fetch(`moons_${message.author.id}`) 
-    
-let cooldown = 60000
+    console.log(targetuser)
+let cooldown = 6000000
 
 let lastrob = await db.fetch(`lastrob_${message.author.id}`)
 if(lastrob !== null && cooldown - (Date.now() - lastrob) > 0) {
@@ -17,7 +17,8 @@ if(lastrob !== null && cooldown - (Date.now() - lastrob) > 0) {
 
     message.channel.send(`🚔 **|** Você está escondido para aque a policia não o apanhe. Você precisa esperar **${timeObj.hours}h ${timeObj.minutes}m ${timeObj.seconds}s** `)
 
-} else { 
+} else {
+  //if (user = 'everyone') return message.reply('Seu corno, você não pode roubar todo o mundo!')
   if (!args) return message.channel.send('<:No:580518832939204628> **|** Por favor use s!rob [user]')
     if (!user) {
         return message.channel.send('<:No:580518832939204628> **|** Você precisa de mencionar um usuário para roubar')
@@ -26,13 +27,14 @@ if(lastrob !== null && cooldown - (Date.now() - lastrob) > 0) {
         return message.channel.send('<:No:580518832939204628> **|** Você precisa de pelo menos de **250 Moons** para roubar alguém.')
     }
 
-    if (targetuser = 0) { // if mentioned user has 0 or less, it will return this.
+    if (targetuser <= 0) { // if mentioned user has 0 or less, it will return this.
         return message.channel.send(`<:No:580518832939204628> **|** ${user.user.username} não tem nada para roubar.`)
     } else {
 
 
     let random = await Math.floor(Math.random() * 200) + 1; // random number 200-1
       console.log(random)
+      console.log(targetuser)
 if (random < targetuser) {
   
     let embed = new Discord.RichEmbed()

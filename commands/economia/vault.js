@@ -7,7 +7,7 @@ exports.run = async (client, message, args, config) => {
       let vaultmoons = await db.fetch(`vault_moons_${message.author.id}`)
       if (vaultmoons === null) db.set(`vault_moons_${message.author.id}`, 0);
   
-  let vaultuser = message.mentions.members.first();
+  let vaultuser = message.mentions.members.first()|| message.guild.members.get(args[0]);
 
 let usermoons = await db.fetch(`moons_${message.author.id}`)
 

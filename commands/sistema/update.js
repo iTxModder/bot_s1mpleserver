@@ -1,15 +1,22 @@
 const Discord = require('discord.js');
 const botconfig = require("../../botconfig.json");
+const db = require('quick.db')
 
 module.exports.run = async (bot, message, args) => {
-
-    return message.channel.send(new Discord.RichEmbed()
+  
+    if (!args[0]) return message.channel.send(new Discord.RichEmbed()
         .setTitle(`Atualizações recentes do ${bot.user.username}.`)
         .setColor("#00FF00")
-        .addField('Comando adicionado',
+        .addField('Comando adicionao',
             `
-            **${bot.prefix}shop**\nCompra itens!` ))
+            **${bot.prefix}clubvault**\nVê as moons que o teu club tem!
+            **${bot.prefix}clubdep**\nDeposita moons que o teu club tem no banco!
+            **${bot.prefix}clubwith**\nRetira moons que o teu club tem no banco!`
+                 )) //**${bot.prefix}shop**\nCompra itens!`
         //.addField('\u200B', "Para todos os comandos de música disponíveis, use ``>help music``"));
+         //.addField('Sistema aprimorado',
+         //   `
+         //   **XP**\nAgora o xp é adicionado através de cada mensagem enviada!`
 }
 
 module.exports.command = {
